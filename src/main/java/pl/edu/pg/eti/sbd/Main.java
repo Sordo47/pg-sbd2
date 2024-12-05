@@ -29,7 +29,7 @@ public class Main {
     // TODO list orders from file
     public static void OrderListMenu() {
         System.out.println("Podaj ścieżkę do pliku do wczytania rozkazów");
-        String path = scanner.nextLine();
+        //String path = scanner.nextLine();
     }
 
     public static boolean MainMenu() {
@@ -37,7 +37,8 @@ public class Main {
         System.out.println("A - dodaj rekord");
         System.out.println("D - usuń rekord");
         System.out.println("R - reorganizuj plik");
-        System.out.println("P - podgląd pliku");
+        System.out.println("P - podgląd rekordów");
+        System.out.println("F - podgląd wszystkich plików");
         System.out.println("L - rozkazy z pliku");
         System.out.println("Q - zamknij program");
         Scanner scanner = new Scanner(System.in);
@@ -55,9 +56,15 @@ public class Main {
                     break;
                 case 'R':
                     // reorganise
+                    structure.reorganise();
                     break;
                 case 'P':
                     // preview
+                    structure.previev();
+                    break;
+                case 'F':
+                    // show all files
+                    structure.allFiles();
                     break;
                 case 'L':
                     OrderListMenu();

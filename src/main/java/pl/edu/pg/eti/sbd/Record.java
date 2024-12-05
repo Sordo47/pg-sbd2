@@ -53,4 +53,13 @@ public class Record {
         System.arraycopy(temp, 0, result, 0, temp.length);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "key=" + key +
+                ", text='" + text + '\'' +
+                ", pointer=" + pointer +
+                '}';
+    }
 }

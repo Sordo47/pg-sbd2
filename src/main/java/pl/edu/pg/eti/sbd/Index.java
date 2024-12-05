@@ -33,4 +33,22 @@ public class Index {
         int pos = Integer.parseInt(parts[1]);
         return new Index(key, pos);
     }
+
+    public byte[] toByte() {
+        byte[] result = new byte[Structure.INDEX_ENT_SIZE];
+        String r1 = String.valueOf(this.firstKey);
+        String r2 = String.valueOf(this.position);
+        String total = r1+" "+r2;
+        byte[] temp = total.getBytes();
+        System.arraycopy(temp, 0, result, 0, temp.length);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Index{" +
+                "firstKey=" + firstKey +
+                ", position=" + position +
+                '}';
+    }
 }
